@@ -17,7 +17,6 @@ namespace csharp_bibliotecaMvc.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateLibro(ViewModel l)
         {
-        //Nella Bind dobbiamo mettere quello che ci aspettiamo
         Libro libro = new Libro();
             if (ModelState.IsValid)
             {

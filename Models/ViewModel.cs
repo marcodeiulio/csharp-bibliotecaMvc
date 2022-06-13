@@ -3,6 +3,7 @@
     public class ViewModel
     {
         public Autore autore { get; set; }
+
         public Libro libro { get; set; }
     }
 }

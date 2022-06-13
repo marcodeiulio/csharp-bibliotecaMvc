@@ -35,8 +35,7 @@ namespace csharp_bibliotecaMvc.Controllers
                 return NotFound();
             }
 
-            var libro = await _context.Libris.Where(m => m.LibroID == id).Include(p => p.Prestito).ToListAsync();
-                //.FirstOrDefaultAsync(m => m.LibroID == id);
+            var libro = await _context.Libris.Where(m => m.LibroID == id).Include(p => p.Prestito).ToListAsync();;
             if (libro == null)
             {
                 return NotFound();
@@ -57,8 +56,6 @@ namespace csharp_bibliotecaMvc.Controllers
         }
 
         // POST: Libroes/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         
@@ -80,8 +77,6 @@ namespace csharp_bibliotecaMvc.Controllers
         }
 
         // POST: Libroes/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("LibroID,Titolo,Anno,Stato,ISBN")] Libro libro)
